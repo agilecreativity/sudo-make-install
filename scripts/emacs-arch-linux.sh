@@ -2,7 +2,6 @@
 ## Install latest Emacs from source (for the brave and true only)
 ## https://www.emacswiki.org/emacs/BuildingEmacs
 
-
 ## Make sure that we are on the most recent with other on Arch
 sudo pacman -Syu
 
@@ -16,8 +15,8 @@ sudo pacman -S webkitgtk webkitgtk2 libpng libjpeg-turbo libtiff xaw3d \
 ## you can still use your stable working Emacs version on your system.
 
 ## Get the official source!
-#mkdir -p $HOME/git
-#git clone git://git.savannah.gnu.org/emacs.git ~/git/emacs
+mkdir -p $HOME/git
+git clone git://git.savannah.gnu.org/emacs.git ~/git/emacs
 
 cd $HOME/git/emacs
 ./autogen.sh
