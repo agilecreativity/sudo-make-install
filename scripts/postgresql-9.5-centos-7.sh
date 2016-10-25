@@ -18,11 +18,16 @@ sudo systemctl enable postgresql-9.5
 ##sudo service  postgresql-9.5 start
 ##sudo chkconfig postgresql-9.5 on
 
-## Verify the installation
-#sudo su - postgres
-#psql
-
-## Note:
-## Then you may change the password for user `postgres` by
-#sudo su -
-#passwd postgres
+## Verify and setup the password for user 'postgres'
+## sudo -u postgres psql
+## \password postgres
+## \q
+## If this does not work then try to edit
+## /etc/postgresql/9.5/main/pg_hba.conf (or similar)
+## change the line from
+## local all all peer
+## to
+## local all all md5
+## host all all 192.168.0.0/24 md5
+## You may need to
+## sudo systemctl restart postgresql-9.5
