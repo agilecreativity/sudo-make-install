@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 ## from: http://www.dropboxwiki.com/tips-and-tricks/install-dropbox-centos-gui-required
 ## Note: to be installed after Dropbox is already setup
 
 ## 1) install python
-sudo yum install python
+#sudo dnf install python
 
 ## 2) download and install official dropbox
 mkdir -p ~/bin && wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py" && chmod +x ~/bin/dropbox.py
