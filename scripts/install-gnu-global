@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+CUR=`pwd`
+
+APP_NAME=global-6.5.5
+BIN_NAME=$APP_NAME.tar.gz
+echo "install GNU global..."
+
+mkdir -p /tmp
+
+wget http://tamacom.com/global/$BIN_NAME -O /tmp/$BIN_NAME
+
+cd /tmp
+tar zxvf $BIN_NAME
+
+cd $APP_NAME
+./configure
+make
+sudo make install
+
+## Cleanup after ourself
+rm -rf /tmp/$BIN_NAME
+rm -rf /tmp/$APP_NAME
+
+## Change back to the current directory
+cd $CUR
