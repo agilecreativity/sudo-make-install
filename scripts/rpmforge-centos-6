@@ -1,0 +1,11 @@
+#!/bin/bash
+## Enable RPMForge repository in RHEL/CenOS 6.x
+wget http://repository.it4i.cz/mirrors/repoforge/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+sudo rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+
+## Now import the key
+wget http://repository.it4i.cz/mirrors/repoforge/RPM-GPG-KEY.dag.txt
+sudo rpm --import RPM-GPG-KEY.dag.txt
+
+## Let's try to install something to verify the installation
+ sudo yum --enablerepo=rpmforge install -y aria2
