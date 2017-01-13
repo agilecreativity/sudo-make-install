@@ -6,9 +6,10 @@ sudo yum install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel
 
 ## Download and extract the source
 mkdir -p ~/src/git
-wget -o ~/src/git/git.zip https://github.com/git/git/archive/master.zip
 cd ~/src/git
-unzip git-master.zip
+#wget -o ~/src/git/git.zip https://github.com/git/git/archive/master.zip
+wget https://github.com/git/git/archive/master.zip
+unzip master.zip 
 
 ## Build and install the source
 cd ~/src/git/git-master
