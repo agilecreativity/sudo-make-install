@@ -2,7 +2,7 @@
 # See: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-a-centos-6-4-vps
 ## Install pre-requisite library/tools
 sudo yum groupinstall "Development Tools"
-sudo yum install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel
+sudo yum install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel curl-devel
 
 ## Download and extract the source
 mkdir -p ~/src/git
