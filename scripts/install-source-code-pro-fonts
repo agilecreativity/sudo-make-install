@@ -1,6 +1,7 @@
 #!/bin/bash
 ## From: http://askubuntu.com/questions/193072/how-to-use-the-new-adobe-source-code-pro-font
 ## Great for working with Emacs
+## Note: work with both Ubuntu and CentOS 6.x+
 mkdir /tmp/adobefont
 cd /tmp/adobefont
 wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
