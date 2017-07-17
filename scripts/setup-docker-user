@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+## Create group =docker= and add current user to this group
+
+if (( $(cat /etc/group | grep -i docker | wc -l) > 0))
+then
+  echo "docker group is already exist, no need to create new one"
+else
+  echo "Need to create new docker group. Please specify password when asked."
+  sudo groupadd docker
+fi
+
+## Add the $USER to the =docker= group.
+## Change the user name to match your preferred user if you do not want
+## to use your current user:
+
+## See: $man gpasswd
+## Note: -a => Add the user to the named group.
+sudo gpasswd -a $USER docker
+
+## Start docker.service if one is not running
+if (( $(sudo systemctl status docker.service | grep -i inactive | wc -l) > 0))
+then
+ echo "docker.service is not running, will start one now..."
+ sudo systemctl start docker.service
+else
+ echo "docker.service is already running, will try to restart."
+ sudo systemctl restart docker.service
+fi
+
+## Report the current status of the running service
+sudo systemctl status docker.service
