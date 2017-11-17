@@ -19,8 +19,8 @@ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 ## 2) Install the emacs's dependency
 brew cask install xquartz
-#brew install imagemagick --with-ghostscript --HEAD
-#brew install librsvg --with-gtk+3 --with-lbgsf
+brew install imagemagick --with-ghostscript --HEAD
+brew install librsvg --with-gtk+3 --with-lbgsf
 ## 3) Build emacs from source for the Mac
 
 brew install emacs --HEAD \
